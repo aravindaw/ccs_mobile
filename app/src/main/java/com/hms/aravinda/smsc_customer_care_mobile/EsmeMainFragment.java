@@ -1,0 +1,22 @@
+package com.hms.aravinda.smsc_customer_care_mobile;
+
+import android.os.Bundle;
+import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+
+/**
+ * Created by Aravinda on 14-Jul-15.
+ */
+public class EsmeMainFragment extends Fragment {
+    View rootview;
+
+    @Nullable
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        rootview = inflater.inflate(R.layout.esme_layout, container, false);
+        return rootview;
+    }
+}
