@@ -20,28 +20,35 @@
 
         </LinearLayout>
 
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:background="#42730E"></LinearLayout>
+
         <TextView
             android:id="@+id/smscPageHeading"
             android:layout_width="wrap_content"
-            android:layout_height="50dp"
+            android:layout_height="wrap_content"
             android:text="SMSC Status page"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:layout_gravity="center_horizontal"
+            android:layout_gravity="bottom|center_horizontal"
             android:textColor="#42730E"
-            android:layout_marginTop="10dp" />
+            android:layout_marginTop="30dp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="Please Enter the SMSC Name"
-            android:id="@+id/smscNameInputText" />
+            android:id="@+id/smscNameInputLable"
+            android:layout_marginTop="30dp" />
 
-        <EditText
+        <Spinner
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/editText"
-            android:layout_gravity="center_horizontal" />
+            android:id="@+id/smscSelectionList"
+            android:layout_marginTop="10dp" />
 
     </LinearLayout>
 </RelativeLayout>
