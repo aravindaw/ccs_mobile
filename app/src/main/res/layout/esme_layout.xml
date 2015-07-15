@@ -4,10 +4,147 @@
     android:layout_height="match_parent"
     android:gravity="center_horizontal">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="ESME"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:background="#42730E"></LinearLayout>
+
+        <TextView
+            android:id="@+id/esmePageHeading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ESME Status page"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_gravity="bottom|center_horizontal"
+            android:textColor="#42730E"
+            android:layout_marginTop="15dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Please Select ESME"
+            android:id="@+id/esmeNameInputLable"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="10dp"
+            android:textSize="15dp" />
+
+        <Spinner
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:id="@+id/esmeSelectionList"
+            android:layout_marginTop="5dp"
+            android:gravity="bottom" />
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp">
+
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="ESME Status - "
+                    android:id="@+id/esmeStatusLable"
+                    android:layout_marginLeft="10dp"
+                    android:textSize="14dp"
+                    android:gravity="center_vertical" />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/esmeStatusView"
+                    android:textSize="14dp"
+                    android:gravity="center_vertical"
+                    android:editable="false"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="ESME Active Sessions - "
+                    android:id="@+id/esmeActiveSesLable"
+                    android:layout_marginLeft="10dp"
+                    android:textSize="14dp"
+                    android:gravity="center_vertical" />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/esmeActiveSessView"
+                    android:textSize="14dp"
+                    android:gravity="center_vertical"
+                    android:editable="false"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="ESME Throughput  - "
+                    android:id="@+id/esmeThroughput"
+                    android:layout_marginLeft="10dp"
+                    android:textSize="14dp"
+                    android:gravity="center_vertical" />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/esmeThroughputView"
+                    android:textSize="14dp"
+                    android:gravity="center_vertical"
+                    android:editable="false"/>
+            </LinearLayout>
+
+            <Button
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="session Details"
+                android:id="@+id/button"
+                android:layout_marginTop="30dp"
+                android:layout_marginLeft="20dp"
+                android:background="#71B22C"
+                android:layout_marginRight="20dp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
 </RelativeLayout>

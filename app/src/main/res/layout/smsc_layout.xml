@@ -59,34 +59,81 @@
             android:layout_height="match_parent"
             android:layout_marginTop="10dp">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="SMSC Status"
-                android:id="@+id/textView2"
-                android:layout_marginLeft="10dp"
-                android:textSize="15dp" />
 
-            <TextView
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="No. of active sessions"
-                android:id="@+id/textView3"
-                android:layout_marginTop="10dp"
-                android:layout_marginLeft="10dp"
-                android:textSize="15dp" />
+                android:gravity="center_vertical">
 
-            <TextView
-                android:layout_width="wrap_content"
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="SMSC Status - "
+                    android:id="@+id/smscStatusLable"
+                    android:layout_marginLeft="10dp"
+                    android:textSize="14dp"
+                    android:gravity="center_vertical" />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/smscStatusView"
+                    android:textSize="14dp"
+                    android:gravity="center_vertical"
+                    android:editable="false"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="throughput"
-                android:id="@+id/textView4"
-                android:layout_marginTop="10dp"
-                android:layout_marginLeft="10dp"
-                android:textSize="15dp" />
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="SMSC Active Sessions - "
+                    android:id="@+id/smscActiveSesLable"
+                    android:layout_marginLeft="10dp"
+                    android:textSize="14dp"
+                    android:gravity="center_vertical" />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/smscActiveSessView"
+                    android:textSize="14dp"
+                    android:gravity="center_vertical"
+                    android:editable="false"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="SMSC Throughput  - "
+                    android:id="@+id/smscThroughput"
+                    android:layout_marginLeft="10dp"
+                    android:textSize="14dp"
+                    android:gravity="center_vertical" />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/smscThroughputView"
+                    android:textSize="14dp"
+                    android:gravity="center_vertical"
+                    android:editable="false"/>
+            </LinearLayout>
 
             <Button
                 android:layout_width="fill_parent"

@@ -4,10 +4,147 @@
     android:layout_height="match_parent"
     android:gravity="center_horizontal">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="SMSC - GW"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:background="#42730E"></LinearLayout>
+
+        <TextView
+            android:id="@+id/smscGwPageHeading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SMSC Status page"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_gravity="bottom|center_horizontal"
+            android:textColor="#42730E"
+            android:layout_marginTop="15dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Please Select SMSC"
+            android:id="@+id/smscGwNameInputLable"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="10dp"
+            android:textSize="15dp" />
+
+        <Spinner
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:id="@+id/smscGwSelectionList"
+            android:layout_marginTop="5dp"
+            android:gravity="bottom" />
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp">
+
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="SMSC Status - "
+                    android:id="@+id/smscStatusLable"
+                    android:layout_marginLeft="10dp"
+                    android:textSize="14dp"
+                    android:gravity="center_vertical" />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/smscStatusView"
+                    android:textSize="14dp"
+                    android:gravity="center_vertical"
+                    android:editable="false"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="SMSC Active Sessions - "
+                    android:id="@+id/smscActiveSesLable"
+                    android:layout_marginLeft="10dp"
+                    android:textSize="14dp"
+                    android:gravity="center_vertical" />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/smscActiveSessView"
+                    android:textSize="14dp"
+                    android:gravity="center_vertical"
+                    android:editable="false"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="SMSC Throughput  - "
+                    android:id="@+id/smscThroughput"
+                    android:layout_marginLeft="10dp"
+                    android:textSize="14dp"
+                    android:gravity="center_vertical" />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/smscThroughputView"
+                    android:textSize="14dp"
+                    android:gravity="center_vertical"
+                    android:editable="false"/>
+            </LinearLayout>
+
+            <Button
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="session Details"
+                android:id="@+id/button"
+                android:layout_marginTop="30dp"
+                android:layout_marginLeft="20dp"
+                android:background="#71B22C"
+                android:layout_marginRight="20dp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
 </RelativeLayout>
