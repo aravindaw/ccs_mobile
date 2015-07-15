@@ -34,21 +34,67 @@
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:layout_gravity="bottom|center_horizontal"
             android:textColor="#42730E"
-            android:layout_marginTop="30dp" />
+            android:layout_marginTop="15dp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="Please Enter the SMSC Name"
+            android:text="Please Select SMSC"
             android:id="@+id/smscNameInputLable"
-            android:layout_marginTop="30dp" />
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="10dp" />
 
         <Spinner
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="48dp"
             android:id="@+id/smscSelectionList"
-            android:layout_marginTop="10dp" />
+            android:layout_marginTop="5dp"
+            android:gravity="bottom" />
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="SMSC Status"
+                android:id="@+id/textView2"
+                android:layout_marginLeft="10dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="No. of active sessions"
+                android:id="@+id/textView3"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="throughput"
+                android:id="@+id/textView4"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp" />
+
+            <Button
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="session Details"
+                android:id="@+id/button"
+                android:layout_marginTop="30dp"
+                android:layout_marginLeft="20dp"
+                android:background="#71B22C"
+                android:layout_marginRight="20dp" />
+
+        </LinearLayout>
 
     </LinearLayout>
 </RelativeLayout>
