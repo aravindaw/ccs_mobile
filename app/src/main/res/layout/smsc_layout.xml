@@ -2,150 +2,157 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center_horizontal"
-    android:background="#cccc">
+    android:background="#cccc"
+    android:gravity="center_horizontal">
 
     <LinearLayout
-        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true">
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:orientation="vertical"
+        android:weightSum="1">
 
         <LinearLayout
-            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
         </LinearLayout>
 
         <LinearLayout
-            android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="20dp"
-            android:background="#42730E"></LinearLayout>
+            android:background="#42730E"
+            android:orientation="vertical"></LinearLayout>
 
         <TextView
             android:id="@+id/smscPageHeading"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center_horizontal"
+            android:layout_marginTop="5dp"
             android:text="SMSC Status page"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:layout_gravity="bottom|center_horizontal"
-            android:textColor="#42730E"
-            android:layout_marginTop="15dp" />
+            android:textColor="#42730E" />
 
         <TextView
+            android:id="@+id/smscNameInputLable"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="Please Select SMSC"
-            android:id="@+id/smscNameInputLable"
-            android:layout_marginTop="20dp"
             android:layout_marginLeft="10dp"
-            android:textSize="15dp" />
+            android:layout_marginTop="10dp"
+            android:text="Please Select SMSC"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textSize="12dp" />
 
         <Spinner
+            android:id="@+id/smscSelectionList"
             android:layout_width="match_parent"
             android:layout_height="48dp"
-            android:id="@+id/smscSelectionList"
-            android:layout_marginTop="5dp"
             android:gravity="bottom" />
 
         <LinearLayout
-            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="10dp">
+            android:layout_height="358dp"
+            android:orientation="vertical">
 
 
             <LinearLayout
-                android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center_vertical">
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
 
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="SMSC Status - "
                     android:id="@+id/smscStatusLable"
+                    android:layout_width="130dp"
+                    android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
-                    android:textSize="14dp"
-                    android:gravity="center_vertical" />
+                    android:gravity="center_vertical"
+                    android:text="SMSC Status - "
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textSize="12dp" />
 
                 <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
                     android:id="@+id/smscStatusView"
-                    android:textSize="14dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:editable="false"
                     android:gravity="center_vertical"
-                    android:editable="false"/>
+                    android:textSize="12dp" />
             </LinearLayout>
 
             <LinearLayout
-                android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center_vertical">
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
 
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="SMSC Active Sessions - "
                     android:id="@+id/smscActiveSesLable"
+                    android:layout_width="130dp"
+                    android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
-                    android:textSize="14dp"
-                    android:gravity="center_vertical" />
+                    android:gravity="center_vertical"
+                    android:text="SMSC Active Sessions - "
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textSize="12dp" />
 
                 <EditText
+                    android:id="@+id/smscActiveSessView"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/smscActiveSessView"
-                    android:textSize="14dp"
+                    android:editable="false"
                     android:gravity="center_vertical"
-                    android:editable="false"/>
+                    android:textSize="12dp" />
             </LinearLayout>
 
             <LinearLayout
-                android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center_vertical">
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
 
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="SMSC Throughput  - "
                     android:id="@+id/smscThroughput"
+                    android:layout_width="130dp"
+                    android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
-                    android:textSize="14dp"
-                    android:gravity="center_vertical" />
+                    android:gravity="center_vertical"
+                    android:text="SMSC Throughput  - "
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textSize="12dp" />
 
                 <EditText
+                    android:id="@+id/smscThroughputView"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/smscThroughputView"
-                    android:textSize="14dp"
+                    android:editable="false"
                     android:gravity="center_vertical"
-                    android:editable="false"/>
+                    android:textSize="12dp" />
             </LinearLayout>
 
             <Button
+                android:id="@+id/button"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:text="session Details"
-                android:id="@+id/button"
-                android:layout_marginTop="30dp"
                 android:layout_marginLeft="20dp"
-                android:background="#71B22C"
-                android:layout_marginRight="20dp" />
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/button"
+                android:text="Get Session Details" />
 
         </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal"
+            android:background="#42730E"
+            android:orientation="horizontal"></LinearLayout>
+
     </LinearLayout>
+
 </RelativeLayout>
