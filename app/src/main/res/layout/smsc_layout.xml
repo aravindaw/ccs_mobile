@@ -43,7 +43,8 @@
             android:text="Please Select SMSC"
             android:id="@+id/smscNameInputLable"
             android:layout_marginTop="20dp"
-            android:layout_marginLeft="10dp" />
+            android:layout_marginLeft="10dp"
+            android:textSize="15dp" />
 
         <Spinner
             android:layout_width="match_parent"
@@ -64,7 +65,8 @@
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="SMSC Status"
                 android:id="@+id/textView2"
-                android:layout_marginLeft="10dp" />
+                android:layout_marginLeft="10dp"
+                android:textSize="15dp" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -73,7 +75,8 @@
                 android:text="No. of active sessions"
                 android:id="@+id/textView3"
                 android:layout_marginTop="10dp"
-                android:layout_marginLeft="10dp" />
+                android:layout_marginLeft="10dp"
+                android:textSize="15dp" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -82,7 +85,8 @@
                 android:text="throughput"
                 android:id="@+id/textView4"
                 android:layout_marginTop="10dp"
-                android:layout_marginLeft="10dp" />
+                android:layout_marginLeft="10dp"
+                android:textSize="15dp" />
 
             <Button
                 android:layout_width="fill_parent"
