@@ -16,25 +16,37 @@ import java.util.List;
  * Created by Aravinda on 14-Jul-15.
  */
 public class SmscMainFragment extends Fragment {
+    ;
     View rootview;
+    private String smscAvailable = "http://www.mocky.io/v2/55a71af4b2016cb0207e6f30";
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         rootview = inflater.inflate(R.layout.smsc_layout, container, false);
 
-        final List<String> list=new ArrayList<String>();
-        list.add("Item 1");
-        list.add("Item 2");
-        list.add("Item 3");
-        list.add("Item 4");
-        list.add("Item 5");
+        View btnSmscSessionDetails = rootview.findViewById(R.id.getSmscSessionDetails);
+        btnSmscSessionDetails.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                new AsyncTasksManager(new OnTaskCompleted() {
+                    @Override
+                    public void onTaskCompleted(String s) {
+                        System.out.println(s);
+                    }
+                }).execute(smscAvailable);
+            }
+        });
 
-        Spinner s = (Spinner) rootview.findViewById(R.id.smscSelectionList);
-        ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(getActivity(),android.R.layout.simple_spinner_item, list);
+
+        final List<String> list = new ArrayList<>();
+        list.add("Hello");
+
+        Spinner smscList = (Spinner) rootview.findViewById(R.id.smscSelectionList);
+        ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_spinner_item,list);
         dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        s.setAdapter(dataAdapter);
-
+        smscList.setAdapter(dataAdapter);
+        dataAdapter.add("PLEASE SELECT SMSC");
         return rootview;
     }
 }

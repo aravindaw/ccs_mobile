@@ -12,7 +12,8 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:orientation="vertical"
-        android:weightSum="1">
+        android:weightSum="1"
+        android:layout_alignParentBottom="true">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -51,7 +52,8 @@
             android:id="@+id/smscSelectionList"
             android:layout_width="match_parent"
             android:layout_height="48dp"
-            android:gravity="bottom" />
+            android:gravity="bottom"
+            android:spinnerMode="dialog" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -133,9 +135,8 @@
                     android:gravity="center_vertical"
                     android:textSize="12dp" />
             </LinearLayout>
-
             <Button
-                android:id="@+id/button"
+                android:id="@+id/getSmscSessionDetails"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
@@ -143,16 +144,7 @@
                 android:layout_marginTop="30dp"
                 android:background="@drawable/button"
                 android:text="Get Session Details" />
-
         </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_gravity="center_horizontal"
-            android:background="#42730E"
-            android:orientation="horizontal"></LinearLayout>
-
     </LinearLayout>
 
 </RelativeLayout>
