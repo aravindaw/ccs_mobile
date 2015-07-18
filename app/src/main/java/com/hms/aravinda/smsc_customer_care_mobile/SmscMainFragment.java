@@ -25,28 +25,23 @@ public class SmscMainFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         rootview = inflater.inflate(R.layout.smsc_layout, container, false);
 
-        View btnSmscSessionDetails = rootview.findViewById(R.id.getSmscSessionDetails);
+        View btnSmscSessionDetails = rootview.findViewById(R.id.getSmscs);
         btnSmscSessionDetails.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 new AsyncTasksManager(new OnTaskCompleted() {
                     @Override
-                    public void onTaskCompleted(String s) {
+                    public void onTaskCompleted(List s) {
                         System.out.println(s);
+                        Spinner smscList = (Spinner) rootview.findViewById(R.id.smscSelectionList);
+                        ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_spinner_item, s);
+                        dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                        smscList.setAdapter(dataAdapter);
                     }
                 }).execute(smscAvailable);
             }
         });
 
-
-        final List<String> list = new ArrayList<>();
-        list.add("Hello");
-
-        Spinner smscList = (Spinner) rootview.findViewById(R.id.smscSelectionList);
-        ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_spinner_item,list);
-        dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        smscList.setAdapter(dataAdapter);
-        dataAdapter.add("PLEASE SELECT SMSC");
         return rootview;
     }
 }

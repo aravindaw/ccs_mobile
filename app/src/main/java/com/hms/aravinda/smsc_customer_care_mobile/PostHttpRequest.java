@@ -11,6 +11,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.util.List;
 
 /**
  * Created by aravinda on 7/9/15.
@@ -20,9 +21,9 @@ public class PostHttpRequest {
     private InputStream inputStream;
 
 
-    public String sendHttpRequest(String url) {
+    public List sendHttpRequest(String url) {
 
-        String result = null;
+        List result = null;
         try {
             HttpClient client = new DefaultHttpClient();
             HttpResponse httpResponse = client.execute(new HttpGet(url));
@@ -33,13 +34,14 @@ public class PostHttpRequest {
                 Gson gson = new Gson();
                 BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
                 GetHttpResponse obj = gson.fromJson(bufferedReader, GetHttpResponse.class);
-                result = obj.toString();
+                result = obj.getSmsc();
             } else {
-                result = "Not valid input Json";
+                result.add("Not valid input Json");
             }
         } catch (IOException e) {
             e.printStackTrace();
         }
+        System.out.println(result+"###########");
         return result;
     }
 }
