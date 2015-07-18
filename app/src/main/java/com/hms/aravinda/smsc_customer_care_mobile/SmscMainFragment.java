@@ -18,7 +18,8 @@ import java.util.List;
 public class SmscMainFragment extends Fragment {
     ;
     View rootview;
-    private String smscAvailable = "http://www.mocky.io/v2/55a71af4b2016cb0207e6f30";
+//    private String smscAvailable = "http://www.mocky.io/v2/55a71af4b2016cb0207e6f30";
+    private String smscAvailable = "http://www.mocky.io/v2/55aab5d60958d9de0f7d528a";
 
     @Nullable
     @Override

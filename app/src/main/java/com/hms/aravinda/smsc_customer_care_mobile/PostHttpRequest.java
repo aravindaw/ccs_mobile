@@ -33,7 +33,7 @@ public class PostHttpRequest {
             if (inputStream != null) {
                 Gson gson = new Gson();
                 BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
-                GetHttpResponse obj = gson.fromJson(bufferedReader, GetHttpResponse.class);
+                JsonResponseDecoder obj = gson.fromJson(bufferedReader, JsonResponseDecoder.class);
                 result = obj.getSmsc();
             } else {
                 result.add("Not valid input Json");
@@ -41,7 +41,8 @@ public class PostHttpRequest {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        System.out.println(result+"###########");
+        System.out.println(result+"######################################");
+        System.out.println(result.toString()+"######################################");
         return result;
     }
 }
