@@ -3,24 +3,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#cccc"
-    android:gravity="center_horizontal">
+    android:gravity="center_horizontal"
+    android:id="@+id/sdfdsf">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
         android:orientation="vertical"
-        android:weightSum="1">
+        android:id="@+id/linearLayout"
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+        android:baselineAligned="true"
+        android:gravity="fill_horizontal|fill_vertical">
 
-        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -54,20 +48,26 @@
                 android:gravity="center"
                 android:spinnerMode="dialog" />
 
+            <!--<Button-->
+                <!--android:id="@+id/getSmscs"-->
+                <!--android:layout_width="75dp"-->
+                <!--android:layout_height="35dp"-->
+                <!--android:layout_gravity="center_vertical|right"-->
+                <!--android:background="@drawable/button"-->
+                <!--android:text="R" />-->
             <Button
                 android:id="@+id/getSmscs"
                 android:layout_width="75dp"
-                android:layout_height="wrap_content"
+                android:layout_height="33dp"
+                android:background="#71B22C"
                 android:layout_gravity="center_vertical|right"
-                android:background="@drawable/button"
                 android:text="R" />
 
         </LinearLayout>
 
-
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="361dp"
             android:orientation="vertical"
             android:weightSum="1">
 
@@ -76,11 +76,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_vertical"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp">
 
                 <TextView
                     android:id="@+id/smscStatusLable"
-                    android:layout_width="130dp"
+                    android:layout_width="140dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
                     android:gravity="center_vertical"
@@ -105,7 +106,7 @@
 
                 <TextView
                     android:id="@+id/smscActiveSesLable"
-                    android:layout_width="130dp"
+                    android:layout_width="140dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
                     android:gravity="center_vertical"
@@ -130,7 +131,7 @@
 
                 <TextView
                     android:id="@+id/smscThroughput"
-                    android:layout_width="130dp"
+                    android:layout_width="140dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
                     android:gravity="center_vertical"
@@ -150,33 +151,55 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="40dp"
+                android:layout_marginTop="20dp"
                 android:gravity="center_vertical"
                 android:orientation="horizontal">
 
-                <TextView
-                    android:id="@+id/textView"
-                    android:layout_width="130dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:gravity="center_horizontal"
-                    android:text="Click to get Sessions in detail"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:textSize="12dp" />
-
+                <!--<Button-->
+                    <!--android:id="@+id/getSmscSessionDetails"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="35dp"-->
+                    <!--android:background="@drawable/button"-->
+                    <!--android:text="Get Session Details"-->
+                    <!--android:layout_marginLeft="20dp"-->
+                    <!--android:layout_marginRight="20dp" />-->
                 <Button
                     android:id="@+id/getSmscSessionDetails"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:background="@drawable/button"
-                    android:text="Get Session Details" />
+                    android:layout_height="35dp"
+                    android:background="#71B22C"
+                    android:text="Get Session Details"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp" />
 
             </LinearLayout>
 
+            <ListView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/smscSessionlistView"
+                android:choiceMode="none" />
+
         </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            android:background="#42730E"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_gravity="bottom"
+            android:layout_margin="0dp"
+            android:layout_weight="20">
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="hSenid mobie Solutions"
+                android:id="@+id/textView"
+                android:layout_gravity="center"
+                android:gravity="center" />
+        </LinearLayout>
     </LinearLayout>
 
 </RelativeLayout>
