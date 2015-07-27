@@ -6,6 +6,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Spinner;
@@ -50,20 +51,57 @@ public class SmscMainFragment extends Fragment {
                         smscList.setAdapter(dataAdapter);
                     }
                 }).execute(smscList);
+
+                final TextView smscStates = (TextView) rootview.findViewById(R.id.smscStatusView);
+                new AsyncTasksManager(new OnTaskCompleted() {
+                    @Override
+                    public void onTaskCompleted(List s) {
+
+                        smscStates.setText("Hellooo...");
+                    }
+                }).execute(fullSmscDetailList);
             }
         });
 
-        final Spinner smscList = (Spinner) rootview.findViewById(R.id.smscSelectionList);
-        final TextView smscStates =(TextView) rootview.findViewById(R.id.smscStatusView);
-        if (smscStates.getText().toString().equals("")){
-            new AsyncTasksManager(new OnTaskCompleted() {
-                @Override
-                public void onTaskCompleted(List s) {
+//        final Spinner smscList = (Spinner) rootview.findViewById(R.id.smscSelectionList);
+//        final TextView smscStates = (TextView) rootview.findViewById(R.id.smscStatusView);
+//        if (smscStates.getText().toString().equals("")) {
+//            new AsyncTasksManager(new OnTaskCompleted() {
+//                @Override
+//                public void onTaskCompleted(List s) {
+//
+//                    smscStates.setText((smscList.getSelectedItem()).toString());
+//                }
+//            }).execute(fullSmscDetailList);
+//        }
 
-                    smscStates.setText((smscList.getSelectedItem()).toString());
-                }
-            }).execute(fullSmscDetailList);
-        }
+
+        final Spinner smscList = (Spinner) rootview.findViewById(R.id.smscSelectionList);
+        final TextView smscStates = (TextView) rootview.findViewById(R.id.smscStatusView);
+        smscList.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                new AsyncTasksManager(new OnTaskCompleted() {
+                    @Override
+                    public void onTaskCompleted(List s) {
+
+                        smscStates.setText((smscList.getSelectedItem()).toString());
+                    }
+                }).execute(fullSmscDetailList);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                new AsyncTasksManager(new OnTaskCompleted() {
+                    @Override
+                    public void onTaskCompleted(List s) {
+
+                        smscStates.setText((smscList.getSelectedItem()).toString());
+                    }
+                }).execute(fullSmscDetailList);
+            }
+        });
+
 
         View btnSmscSessionDetails = rootview.findViewById(R.id.getSmscSessionDetails);
         btnSmscSessionDetails.setOnClickListener(new View.OnClickListener() {
