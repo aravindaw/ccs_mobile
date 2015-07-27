@@ -11,6 +11,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -20,10 +21,9 @@ import java.util.List;
 public class PostHttpRequest {
     private InputStream inputStream;
 
-
     public List sendHttpRequest(String url) {
+        List result = new ArrayList();
 
-        List result = null;
         try {
             HttpClient client = new DefaultHttpClient();
             HttpResponse httpResponse = client.execute(new HttpGet(url));
@@ -34,8 +34,15 @@ public class PostHttpRequest {
                 Gson gson = new Gson();
                 BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
                 JsonResponseDecoder obj = gson.fromJson(bufferedReader, JsonResponseDecoder.class);
-                result = obj.getSmsc();
-                System.out.println(result + "######################################");
+//                result = obj.getSmscs();
+                List<Smscs> list = obj.getSmscs();
+                for (Smscs x : list) {
+                    System.out.print(x.getName() + ",");
+                    ArrayList smscList = new ArrayList(Integer.parseInt(x.getName()));
+                    System.out.println(smscList);
+                    result = smscList;
+                }
+
             } else {
                 result.add("Not valid input Json");
             }

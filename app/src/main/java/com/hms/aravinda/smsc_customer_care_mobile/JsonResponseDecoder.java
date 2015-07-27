@@ -12,28 +12,30 @@ import com.google.gson.annotations.Expose;
 public class JsonResponseDecoder {
 
     @Expose
-    private List<Smsc> smsc = new ArrayList<Smsc>();
+    private List<Smscs> smscs = new ArrayList<Smscs>();
 
     /**
-     * @return The smsc
+     * @return The smscs
      */
-    public List<Smsc> getSmsc() {
-        return smsc;
+    public List<Smscs> getSmscs() {
+        return smscs;
     }
 
     /**
-     * @param smsc The smsc
+     * @param smscs The smscs
      */
-    public void setSmsc(List<Smsc> smsc) {
-        this.smsc = smsc;
+    public void setSmscs(List<Smscs> smscs) {
+        this.smscs = smscs;
     }
 
 }
 
-class Smsc {
+class Smscs {
 
     @Expose
     private String name;
+    @Expose
+    private String id;
     @Expose
     private String status;
     @SerializedName("active_sessions")
@@ -57,6 +59,20 @@ class Smsc {
      */
     public void setName(String name) {
         this.name = name;
+    }
+
+    /**
+     * @return The id
+     */
+    public String getId() {
+        return name;
+    }
+
+    /**
+     * @param id The id
+     */
+    public void setId(String id) {
+        this.id = id;
     }
 
     /**

@@ -22,6 +22,7 @@ public class SmscMainFragment extends Fragment {
     //    private String smscAvailable = "http://www.mocky.io/v2/55a71af4b2016cb0207e6f30";
     private String smscAvailable = "http://www.mocky.io/v2/55aab5d60958d9de0f7d528a";
     private String smscSessionAvailable = "http://www.mocky.io/v2/55b3bfb61c5bf14e07c90073";
+    private String smscList = "http://www.mocky.io/v2/55b5cff87f8e70e7165d9590";
 
     @Nullable
     @Override
@@ -40,7 +41,7 @@ public class SmscMainFragment extends Fragment {
                         dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
                         smscList.setAdapter(dataAdapter);
                     }
-                }).execute(smscAvailable);
+                }).execute(smscList);
             }
         });
 
