@@ -17,18 +17,26 @@ import java.util.List;
  * Created by Aravinda on 14-Jul-15.
  */
 public class SmscMainFragment extends Fragment {
-    ;
+
     View rootview;
-    //    private String smscAvailable = "http://www.mocky.io/v2/55a71af4b2016cb0207e6f30";
-    private String smscAvailable = "http://www.mocky.io/v2/55aab5d60958d9de0f7d528a";
-    private String smscSessionAvailable = "http://www.mocky.io/v2/55b3bfb61c5bf14e07c90073";
-    private String smscList = "http://www.mocky.io/v2/55b5cff87f8e70e7165d9590";
+    public String smscSessionAvailable = "http://www.mocky.io/v2/55b3bfb61c5bf14e07c90073";
+    public String fullSmscDetailList = "http://www.mocky.io/v2/55b675b176961dee0d7c5b71";
+    public String smscList = "http://www.mocky.io/v2/55b5cff87f8e70e7165d9590";
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         rootview = inflater.inflate(R.layout.smsc_layout, container, false);
 
+        new AsyncTasksManager(new OnTaskCompleted() {
+            @Override
+            public void onTaskCompleted(List s) {
+                Spinner smscList = (Spinner) rootview.findViewById(R.id.smscSelectionList);
+                ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_spinner_item, s);
+                dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                smscList.setAdapter(dataAdapter);
+            }
+        }).execute(smscList);
         View btnSmscDetails = rootview.findViewById(R.id.getSmscs);
         btnSmscDetails.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -44,6 +52,18 @@ public class SmscMainFragment extends Fragment {
                 }).execute(smscList);
             }
         });
+
+        final Spinner smscList = (Spinner) rootview.findViewById(R.id.smscSelectionList);
+        final TextView smscStates =(TextView) rootview.findViewById(R.id.smscStatusView);
+        if (smscStates.getText().toString().equals("")){
+            new AsyncTasksManager(new OnTaskCompleted() {
+                @Override
+                public void onTaskCompleted(List s) {
+
+                    smscStates.setText((smscList.getSelectedItem()).toString());
+                }
+            }).execute(fullSmscDetailList);
+        }
 
         View btnSmscSessionDetails = rootview.findViewById(R.id.getSmscSessionDetails);
         btnSmscSessionDetails.setOnClickListener(new View.OnClickListener() {
@@ -72,8 +92,6 @@ public class SmscMainFragment extends Fragment {
                 }).execute(smscSessionAvailable);
             }
         });
-
-
         return rootview;
     }
 }

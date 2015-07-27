@@ -65,7 +65,7 @@ class Smscs {
      * @return The id
      */
     public String getId() {
-        return name;
+        return id;
     }
 
     /**

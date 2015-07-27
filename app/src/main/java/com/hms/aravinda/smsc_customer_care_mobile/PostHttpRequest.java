@@ -11,18 +11,18 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
 import java.util.List;
+import java.util.Vector;
 
 /**
  * Created by aravinda on 7/9/15.
  */
 
 public class PostHttpRequest {
-    private InputStream inputStream;
 
     public List sendHttpRequest(String url) {
-        List result = new ArrayList();
+        InputStream inputStream;
+        Vector<String> result = new Vector<>();
 
         try {
             HttpClient client = new DefaultHttpClient();
@@ -34,23 +34,31 @@ public class PostHttpRequest {
                 Gson gson = new Gson();
                 BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
                 JsonResponseDecoder obj = gson.fromJson(bufferedReader, JsonResponseDecoder.class);
-//                result = obj.getSmscs();
+                //result = obj.getSmscs();
                 List<Smscs> list = obj.getSmscs();
-                for (Smscs x : list) {
-                    System.out.print(x.getName() + ",");
-                    ArrayList smscList = new ArrayList(Integer.parseInt(x.getName()));
-                    System.out.println(smscList);
-                    result = smscList;
-                }
 
+                Vector<String> smscList = new Vector<>();
+                Vector<String> smscDetails = new Vector<>();
+
+                SmscMainFragment smscMain = new SmscMainFragment();
+                if (url.equals(smscMain.smscList)) {
+                    //for get smsc list
+                    for (Smscs x : list) {
+                        smscList.add(x.getName());
+                    }
+                }else if (url.equals(smscMain.fullSmscDetailList)){
+                    for (Smscs x : list) {
+                        System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+                    }
+                }
+                result = smscList;
             } else {
                 result.add("Not valid input Json");
             }
         } catch (IOException e) {
             e.printStackTrace();
         }
-        System.out.println(result.toString() + "######################################");
+        System.out.println(result.toString());
         return result;
     }
 }
-
