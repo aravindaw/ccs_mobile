@@ -103,7 +103,7 @@
                 <EditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/smscActiveSessView"
+                    android:id="@+id/smscGwActiveSessView"
                     android:textSize="14dp"
                     android:gravity="center_vertical"
                     android:editable="false"/>
@@ -128,7 +128,7 @@
                 <EditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/smscThroughputView"
+                    android:id="@+id/smscGwThroughputView"
                     android:textSize="14dp"
                     android:gravity="center_vertical"
                     android:editable="false"/>

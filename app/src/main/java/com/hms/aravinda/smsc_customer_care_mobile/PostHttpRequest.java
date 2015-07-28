@@ -46,9 +46,11 @@ public class PostHttpRequest {
                     for (Smscs x : list) {
                         smscList.add(x.getName());
                     }
-                }else if (url.equals(smscMain.fullSmscDetailList)){
+                } else if (url.equals(smscMain.smscDetails)) {
                     for (Smscs x : list) {
-                        System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+                        smscList.add(x.getStatus());
+                        smscList.add(x.getActiveSessions());
+                        smscList.add(x.getThroughput());
                     }
                 }
                 result = smscList;
