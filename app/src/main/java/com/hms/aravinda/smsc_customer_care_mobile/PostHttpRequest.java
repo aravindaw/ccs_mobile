@@ -49,7 +49,6 @@ public class PostHttpRequest {
                 } else if (url.equals(smscMain.smscDetails)) {
                     for (Smscs x : list) {
                         //get smsc details
-                        System.out.println(x.getActiveSessions()+x.getActiveSessionCount()+"@@@@@@@@@@@@@@@@@@@@@@@@@@@");
                         smscList.add(x.getActiveSessions());
                         smscList.add(x.getActiveSessionCount());
                         smscList.add(x.getThroughput());

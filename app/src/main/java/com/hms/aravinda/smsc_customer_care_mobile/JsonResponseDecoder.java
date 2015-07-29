@@ -38,10 +38,8 @@ class Smscs {
     private String id;
     @Expose
     private String status;
-    @SerializedName("active_sessions")
     @Expose
     private String activeSessions;
-    @SerializedName("active_session_count")
     @Expose
     private String activeSessionCount;
     @Expose

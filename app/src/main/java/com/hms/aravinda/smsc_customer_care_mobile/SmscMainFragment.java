@@ -69,23 +69,18 @@ public class SmscMainFragment extends Fragment {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 if (smscList.getSelectedItem().equals("smsc1")) {
-                    System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$1");
                     executeURL = smscDetails;
                 } else if (smscList.getSelectedItem().equals("smsc2")) {
-                    System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$2");
                     executeURL = smscDetails2;
                 } else if (smscList.getSelectedItem().equals("smsc3")) {
-                    System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$3");
                     executeURL = smscDetails3;
                 }
                 new AsyncTasksManager(new OnTaskCompleted() {
                     @Override
                     public void onTaskCompleted(List s) {
-                        System.out.println((s.toString()));
-
-//                        smscStates.setText((s.get(0).toString()));
-//                        activeSessions.setText((s.get(1).toString()));
-//                        throughtPut.setText((s.get(2).toString()));
+                        smscStates.setText((s.get(0).toString()));
+                        activeSessions.setText((s.get(1).toString()));
+                        throughtPut.setText((s.get(2).toString()));
                     }
                 }).execute(executeURL);
             }
