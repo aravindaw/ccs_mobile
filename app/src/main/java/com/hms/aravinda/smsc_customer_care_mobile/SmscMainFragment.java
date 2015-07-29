@@ -22,11 +22,11 @@ public class SmscMainFragment extends Fragment {
     View rootview;
     public String smscList = "http://www.mocky.io/v2/55b5cff87f8e70e7165d9590";
     //smsc1
-    public String smscDetails = "http://www.mocky.io/v2/55b7bd91f8bc80da0901c488";
+    public String smscDetails = "http://www.mocky.io/v2/55b8d0dbacd73a9702ee2305";
     //smsc2
-    public String smscDetails2 = "http://www.mocky.io/v2/55b7ca1cf8bc80f40a01c48c";
+    public String smscDetails2 = "http://www.mocky.io/v2/55b8d0ffacd73a9702ee2306";
     //smsc3
-    public String smscDetails3 = "http://www.mocky.io/v2/55b7ca72f8bc80fd0a01c48d";
+    public String smscDetails3 = "http://www.mocky.io/v2/55b8d120acd73a9c02ee2307";
     public String smscSessionDetails = "http://www.mocky.io/v2/55b82101f8bc809a1101c4bd";
     public String executeURL;
 
@@ -81,6 +81,8 @@ public class SmscMainFragment extends Fragment {
                 new AsyncTasksManager(new OnTaskCompleted() {
                     @Override
                     public void onTaskCompleted(List s) {
+                        System.out.println((s.toString()));
+
 //                        smscStates.setText((s.get(0).toString()));
 //                        activeSessions.setText((s.get(1).toString()));
 //                        throughtPut.setText((s.get(2).toString()));
