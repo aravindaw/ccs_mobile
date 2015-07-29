@@ -46,7 +46,7 @@ public class PostHttpRequest {
                     for (Smscs x : list) {
                         smscList.add(x.getName());
                     }
-                } else if (url.equals(smscMain.smscDetails)) {
+                } else if (url.equals(smscMain.smscDetails) || url.equals(smscMain.smscDetails2) || url.equals(smscMain.smscDetails3)) {
                     for (Smscs x : list) {
                         //get smsc details
                         smscList.add(x.getActiveSessions());
@@ -61,7 +61,7 @@ public class PostHttpRequest {
                 }
                 result = smscList;
             } else {
-                result.add("Not valid input Json");
+                result.add("Not valid Json input");
             }
         } catch (IOException e) {
             e.printStackTrace();

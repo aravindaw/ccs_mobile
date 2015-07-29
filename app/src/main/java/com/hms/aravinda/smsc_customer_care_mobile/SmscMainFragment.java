@@ -20,7 +20,7 @@ import java.util.List;
 public class SmscMainFragment extends Fragment {
 
     View rootview;
-    public String smscList = "http://www.mocky.io/v2/55b5cff87f8e70e7165d9590";
+    public String smscList = "http://www.mocky.io/v2/55b9182bacd73ab008ee2358";
     //smsc1
     public String smscDetails = "http://www.mocky.io/v2/55b8d0dbacd73a9702ee2305";
     //smsc2
