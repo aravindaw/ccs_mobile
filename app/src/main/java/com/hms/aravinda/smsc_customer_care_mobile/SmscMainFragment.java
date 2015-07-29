@@ -27,7 +27,7 @@ public class SmscMainFragment extends Fragment {
     public String smscDetails2 = "http://www.mocky.io/v2/55b7ca1cf8bc80f40a01c48c";
     //smsc3
     public String smscDetails3 = "http://www.mocky.io/v2/55b7ca72f8bc80fd0a01c48d";
-    public String smscSessionDetails = "http://www.mocky.io/v2/55b3bfb61c5bf14e07c90073";
+    public String smscSessionDetails = "http://www.mocky.io/v2/55b82101f8bc809a1101c4bd";
     public String executeURL;
 
     @Nullable
@@ -69,18 +69,21 @@ public class SmscMainFragment extends Fragment {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 if (smscList.getSelectedItem().equals("smsc1")) {
+                    System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$1");
                     executeURL = smscDetails;
                 } else if (smscList.getSelectedItem().equals("smsc2")) {
+                    System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$2");
                     executeURL = smscDetails2;
                 } else if (smscList.getSelectedItem().equals("smsc3")) {
+                    System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$3");
                     executeURL = smscDetails3;
                 }
                 new AsyncTasksManager(new OnTaskCompleted() {
                     @Override
                     public void onTaskCompleted(List s) {
-                        smscStates.setText((s.get(0).toString()));
-                        activeSessions.setText((s.get(1).toString()));
-                        throughtPut.setText((s.get(2).toString()));
+//                        smscStates.setText((s.get(0).toString()));
+//                        activeSessions.setText((s.get(1).toString()));
+//                        throughtPut.setText((s.get(2).toString()));
                     }
                 }).execute(executeURL);
             }
@@ -102,18 +105,6 @@ public class SmscMainFragment extends Fragment {
                         ListView smscSessionList = (ListView) rootview.findViewById(R.id.smscSessionlistView);
                         ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, s);
                         smscSessionList.setAdapter(dataAdapter);
-                        dataAdapter.add("foo");
-                        dataAdapter.add("foo2");
-                        dataAdapter.add("foo");
-                        dataAdapter.add("foo2");
-                        dataAdapter.add("foo");
-                        dataAdapter.add("foo2");
-                        dataAdapter.add("foo");
-                        dataAdapter.add("foo2");
-                        dataAdapter.add("foo");
-                        dataAdapter.add("foo2");
-                        dataAdapter.add("foo");
-                        dataAdapter.add("foo2");
                     }
                 }).execute(smscSessionDetails);
             }

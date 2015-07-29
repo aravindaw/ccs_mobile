@@ -46,6 +46,8 @@ class Smscs {
     private String activeSessionCount;
     @Expose
     private String throughput;
+    @Expose
+    private String sessionDetail;
 
     /**
      * @return The name
@@ -129,6 +131,20 @@ class Smscs {
      */
     public void setThroughput(String throughput) {
         this.throughput = throughput;
+    }
+
+    /**
+     * @return The sessionDetail
+     */
+    public String getSessionDetail() {
+        return sessionDetail;
+    }
+
+    /**
+     * @param sessionDetail The sessionDetail
+     */
+    public void setSessionDetail(String sessionDetail) {
+        this.sessionDetail = sessionDetail;
     }
 
 }

@@ -23,6 +23,7 @@ public class PostHttpRequest {
     public List sendHttpRequest(String url) {
         InputStream inputStream;
         Vector<String> result = new Vector<>();
+        List sessions;
 
         try {
             HttpClient client = new DefaultHttpClient();
@@ -34,7 +35,6 @@ public class PostHttpRequest {
                 Gson gson = new Gson();
                 BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
                 JsonResponseDecoder obj = gson.fromJson(bufferedReader, JsonResponseDecoder.class);
-                //result = obj.getSmscs();
                 List<Smscs> list = obj.getSmscs();
 
                 Vector<String> smscList = new Vector<>();
@@ -48,9 +48,15 @@ public class PostHttpRequest {
                     }
                 } else if (url.equals(smscMain.smscDetails)) {
                     for (Smscs x : list) {
-                        smscList.add(x.getStatus());
+                        //get smsc details
                         smscList.add(x.getActiveSessions());
                         smscList.add(x.getThroughput());
+                    }
+                } else if (url.equals(smscMain.smscSessionDetails)) {
+                    //get active session
+                    for (Smscs x : list) {
+                        smscList.add(x.getSessionDetail());
+                        System.out.println(smscList+"##########################################");
                     }
                 }
                 result = smscList;
@@ -60,7 +66,6 @@ public class PostHttpRequest {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        System.out.println(result.toString());
         return result;
     }
 }
