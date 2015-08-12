@@ -20,7 +20,16 @@
             android:layout_width="match_parent"
             android:layout_height="20dp"
             android:background="#42730E"
-            android:orientation="vertical"></LinearLayout>
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="hSenid mobile Solutions"
+                android:id="@+id/headerTextView"
+                android:layout_gravity="center"
+                android:gravity="center" />
+        </LinearLayout>
 
         <TextView
             android:id="@+id/smscPageHeading"
@@ -158,14 +167,6 @@
                 android:gravity="center_vertical"
                 android:orientation="horizontal">
 
-                <!--<Button-->
-                    <!--android:id="@+id/getSmscSessionDetails"-->
-                    <!--android:layout_width="match_parent"-->
-                    <!--android:layout_height="35dp"-->
-                    <!--android:background="@drawable/button"-->
-                    <!--android:text="Get Session Details"-->
-                    <!--android:layout_marginLeft="20dp"-->
-                    <!--android:layout_marginRight="20dp" />-->
                 <Button
                     android:id="@+id/getSmscSessionDetails"
                     android:layout_width="match_parent"
